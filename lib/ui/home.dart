@@ -67,7 +67,7 @@ class HomeState extends State {
     NotificationDetails notificationDetails =
         NotificationDetails(androidNotificationDetails, iosNotificationDetails);
     await flutterLocalNotificationsPlugin.show(
-        0, 'Hello there', 'please subscribe my channel', notificationDetails);
+        0, 'Hello there', 'You have Upcoming Contests', notificationDetails);
   }
 
   Future<void> notificationAfterSec() async {
@@ -83,8 +83,8 @@ class HomeState extends State {
 
     NotificationDetails notificationDetails =
         NotificationDetails(androidNotificationDetails, iosNotificationDetails);
-    await flutterLocalNotificationsPlugin.schedule(1, 'Hello there',
-        'please subscribe my channel', timeDelayed, notificationDetails);
+    await flutterLocalNotificationsPlugin.schedule(1, 'Hello Coder!',
+        'You have Upcoming Contests', timeDelayed, notificationDetails);
   }
 
   Future onSelectNotification(String payLoad) async {
