@@ -63,13 +63,13 @@ This is a android application based on Codeforces.
 - Framework:
   - Flutter
 
-- dependencies:
-  - flutter:
-    - sdk: flutter
+  - dependencies:
+    - flutter:
+      - sdk: flutter
 
-  - http: 0.12.1
-  - intl: 0.16.1
-  - flutter_local_notifications: 1.4.4+2
-  - android_alarm_manager: 0.4.5+11
-  - intent: 1.3.4
-  - url_launcher: 5.5.0
+    - http: 0.12.1
+    - intl: 0.16.1
+    - flutter_local_notifications: 1.4.4+2
+    - android_alarm_manager: 0.4.5+11
+    - intent: 1.3.4
+    - url_launcher: 5.5.0
