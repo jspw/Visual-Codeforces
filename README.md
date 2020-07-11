@@ -1,17 +1,75 @@
-# cf_view
+# Codeforces App
 
-A new Flutter project.
+This is a android application based on Codeforces.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Show upcoming contest
+- Click and Notification for upcoming contests
+- Check previous contests
+- Open previous contests in browser
+- Search Handles
+- User profile details
+- Compare two handles
 
-A few resources to get you started if this is your first Flutter project:
+**Note : Under Development**
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Codeforces-App
+## Screenshots
+
+- Loading Screen
+
+    ![Loading Screen](assets/ss/loading.png)
+
+- Upcoming Contests
+
+    ![Upcoming Contests](assets/ss/upcoming_contests.png)
+
+- Notification
+
+    ![Notification](assets/ss/notification.png)
+
+- Previous Contests
+
+    ![Previous Contests](assets/ss/previous_contests.png)
+
+- Open Browser
+
+    ![Open Browser](assets/ss/open_brawser.png)
+
+- Search Handle
+
+    ![Search Handle](assets/ss/search-handle.png)
+
+- Handle Details
+
+    ![Handle Details](assets/ss/user_profile.png)
+
+- Compare handles
+
+    ![Compare handles](assets/ss/compare.png)
+
+- Comapre Result
+
+    ![Comapre Result](assets/ss/compare_handles.png)
+
+
+
+
+
+## Technologies used 
+- Programming Language :
+  - Dart
+- Framework:
+  - Flutter
+
+- dependencies:
+  - flutter:
+    - sdk: flutter
+
+  - http: 0.12.1
+  - intl: 0.16.1
+  - flutter_local_notifications: 1.4.4+2
+  - android_alarm_manager: 0.4.5+11
+  - intent: 1.3.4
+  - url_launcher: 5.5.0
