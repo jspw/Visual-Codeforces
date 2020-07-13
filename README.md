@@ -9,62 +9,63 @@ This is a android application based on Codeforces.
 - Check previous contests
 - Open previous contests in browser
 - Search Handles
-- User profile details
+- User profile :
+  - Profile details
+  - Contest rating curve
 - Compare two handles
 
 **Note : Under Development**
-
 
 ## Screenshots
 
 - Loading Screen
 
-    ![Loading Screen](assets/ss/loading.png)
+  ![Loading Screen](assets/ss/loading.png)
 
-- Upcoming Contests
+* Upcoming Contests
 
-    ![Upcoming Contests](assets/ss/upcoming_contests.png)
+  ![Upcoming Contests](assets/ss/upcoming_contests.png)
 
 - Notification
 
-    ![Notification](assets/ss/notification.png)
+  ![Notification](assets/ss/notification.png)
 
-- Previous Contests
+* Previous Contests
 
-    ![Previous Contests](assets/ss/previous_contests.png)
+  ![Previous Contests](assets/ss/previous_contests.png)
 
-- Open Browser
+- Open previous contests in Browser
 
-    ![Open Browser](assets/ss/open_brawser.png)
+  ![Open Browser](assets/ss/open_brawser.png)
 
-- Search Handle
+* Search Handle
 
-    ![Search Handle](assets/ss/search-handle.png)
+  ![Search Handle](assets/ss/search-handle.png)
 
 - Handle Details
 
-    ![Handle Details](assets/ss/user_profile.png)
+  ![Handle Details](assets/ss/user_profile.png)
 
-- Compare handles
+* Compare handles
 
-    ![Compare handles](assets/ss/compare.png)
+  ![Compare handles](assets/ss/compare.png)
 
 - Comapre Result
 
-    ![Comapre Result](assets/ss/compare_handles.png)
+  ![Comapre Result](assets/ss/compare_handles.png)
 
+## Technologies used
 
-
-
-
-## Technologies used 
 - Programming Language :
   - Dart
 - Framework:
+
   - Flutter
 
   - dependencies:
+
     - flutter:
+
       - sdk: flutter
 
     - http: 0.12.1
@@ -73,3 +74,5 @@ This is a android application based on Codeforces.
     - android_alarm_manager: 0.4.5+11
     - intent: 1.3.4
     - url_launcher: 5.5.0
+    - flutter_sparkline
+    - flutter_staggered_grid_view
