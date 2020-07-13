@@ -26,6 +26,10 @@ This is a android application based on Codeforces.
 
   ![Upcoming Contests](assets/ss/upcoming_contests.png)
 
+- Set Notification for Upcoming Contests :
+  
+  ![](assets/ss/set_notification.png)
+
 - Notification
 
   ![Notification](assets/ss/notification.png)
