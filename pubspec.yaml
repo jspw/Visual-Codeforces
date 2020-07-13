@@ -27,7 +27,7 @@ dependencies:
   flutter_local_notifications: ^1.4.4+2
   intl: ^0.16.1
   # android_alarm_manager: ^0.4.5+11
-  intent: ^1.3.4
+  # intent: ^1.3.4
   url_launcher: ^5.5.0
 
   flutter_sparkline: ^0.1.0 #Beautiful sparkline charts for Flutter.

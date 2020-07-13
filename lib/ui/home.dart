@@ -8,6 +8,17 @@ import 'package:intl/intl.dart';
 import './user.dart';
 import 'compare.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+final snackBar = SnackBar(
+  content: Text(
+    'Notification Set For Contest!',
+    style: TextStyle(
+      color: Colors.white,
+    ),
+  ),
+  backgroundColor: Colors.black,
+);
 
 class Home extends StatefulWidget {
   @override
@@ -19,6 +30,27 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State {
+  String readTimestampDif(int timestamp) {
+    var now = new DateTime.now();
+    var date = new DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+    var diff = now.difference(date);
+
+    print("Time span : ${diff.inSeconds}");
+
+    return diff.inSeconds.toString();
+  }
+
+  int ContestId;
+
+  _launchURL(int id) async {
+    String url = "https://codeforces.com/contest/" + id.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   // lOCAL pUSH NOTIFICATION
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -50,8 +82,9 @@ class HomeState extends State {
     await notification();
   }
 
-  void _showNotificationsAfterSecond() async {
-    await notificationAfterSec();
+  void _showNotificationsAfterSecond(int time) async {
+    print("Time : $time");
+    await notificationAfterSec(time.abs());
   }
 
   Future<void> notification() async {
@@ -70,8 +103,8 @@ class HomeState extends State {
         0, 'Hello there', 'You have Upcoming Contests', notificationDetails);
   }
 
-  Future<void> notificationAfterSec() async {
-    var timeDelayed = DateTime.now().add(Duration(seconds: 10));
+  Future<void> notificationAfterSec(int time) async {
+    var timeDelayed = DateTime.now().add(Duration(seconds: time));
     AndroidNotificationDetails androidNotificationDetails =
         AndroidNotificationDetails(
             'second channel ID', 'second Channel title', 'second channel body',
@@ -84,7 +117,7 @@ class HomeState extends State {
     NotificationDetails notificationDetails =
         NotificationDetails(androidNotificationDetails, iosNotificationDetails);
     await flutterLocalNotificationsPlugin.schedule(1, 'Hello Coder!',
-        'You have Upcoming Contests', timeDelayed, notificationDetails);
+        'Its Contest Time', timeDelayed, notificationDetails);
   }
 
   Future onSelectNotification(String payLoad) async {
@@ -92,11 +125,13 @@ class HomeState extends State {
       print("payLoad : $payLoad");
     }
 
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => User(_textFieldController.text.toString())),
-    );
+    // await Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //       builder: (context) => User(_textFieldController.text.toString())),
+    // );
+
+    _launchURL(this.ContestId);
 
     // we can set navigator to navigate another screen
   }
@@ -209,7 +244,6 @@ class HomeState extends State {
         leading: new Image.asset(
           "assets/images/cf.png",
           height: 25.0,
-          
         ),
         actions: [
           IconButton(
@@ -354,7 +388,13 @@ class HomeState extends State {
                             )
                           ],
                         ),
-                        onTap: _showNotificationsAfterSecond,
+                        onTap: () {
+                          _showNotificationsAfterSecond(int.parse(
+                              readTimestampDif(snapshot.data['result'][index]
+                                  ['startTimeSeconds'])));
+
+                          Scaffold.of(context).showSnackBar(snackBar);
+                        },
                       ),
                     );
                   }
