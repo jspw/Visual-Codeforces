@@ -24,11 +24,15 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.12.1
-  intl: ^0.16.1
   flutter_local_notifications: ^1.4.4+2
-  android_alarm_manager: ^0.4.5+11
+  intl: ^0.16.1
+  # android_alarm_manager: ^0.4.5+11
   intent: ^1.3.4
   url_launcher: ^5.5.0
+
+  flutter_sparkline: ^0.1.0 #Beautiful sparkline charts for Flutter.
+  flutter_staggered_grid_view: ^0.3.0 #A Flutter staggered grid view which supports multiple columns with rows of varying sizes.
+  flutter_circular_chart: ^0.1.0 # A library for creating animated circular chart widgets with Flutter,
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -49,7 +53,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/images/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

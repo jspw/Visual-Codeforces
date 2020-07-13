@@ -1,0 +1,49 @@
+[
+    {
+        status: OK,
+        result: 
+        [
+            {  
+                contribution: 0,
+                lastOnlineTimeSeconds: 1592676640, 
+                rating: 1345, 
+                friendOfCount: 1, 
+                titlePhoto: //userpic.codeforces.com/1446253/title/2e8fd8c684026c8c.jpg, 
+                rank: pupil, 
+                handle: jspw, 
+                maxRating: 1429, 
+                avatar: //userpic.codeforces.com/1446253/avatar/f5b02ba30f9c8cb.jpg, 
+                registrationTimeSeconds: 1584970392,
+                 maxRank: specialist
+                
+            }
+                 
+        ]
+    }, 
+    
+    [
+        {
+            contestId: 1327, 
+            contestName: Educational Codeforces Round 84 (Rated for Div. 2), 
+            handle: jspw, 
+            rank: 8650, 
+            ratingUpdateTimeSeconds: 1584981300, 
+            oldRating: 0, 
+            newRating: 1429
+
+        },
+        {
+            contestId: 1342, 
+            contestName: Educational Codeforces Round 86 (Rated for Div. 2), 
+            handle: jspw, 
+            rank: 11585, 
+            ratingUpdateTimeSeconds: 1587918900, 
+            oldRating: 1429, 
+            newRating: 1345
+        }
+            
+    ]
+]
+
+
+

@@ -96,8 +96,8 @@ class PreviousContestsState extends State {
                     builder: (context) {
                       String handle1 = _handle1Controller.text.toString();
                       String handle2 = _handle2Controller.text.toString();
-                      _handle1Controller.clear();
-                      _handle2Controller.clear();
+                      // _handle1Controller.clear();
+                      // _handle2Controller.clear();
                       return Compare(handle1, handle2);
                     },
                   ));
@@ -154,7 +154,7 @@ class PreviousContestsState extends State {
                   itemCount: snapshot.data['result'].length,
                   // ignore: missing_return
                   itemBuilder: (context, index) {
-                    index += bal+1;
+                    index += bal + 1;
                     print("bal : $bal");
                     if (snapshot.data['result'][index]['phase'] == "FINISHED") {
                       print("Index : $index");
@@ -276,7 +276,7 @@ class PreviousContestsState extends State {
                               _launchURL(snapshot.data['result'][index]['id']),
                         ),
                       );
-                    } 
+                    }
                   });
             }
           }),
@@ -289,12 +289,24 @@ class PreviousContestsState extends State {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.new_releases),
-              title: Text("UPCOMING"),
+              icon: Icon(
+                Icons.new_releases,
+                color: Colors.grey,
+              ),
+              title: Text(
+                "UPCOMING",
+                style: TextStyle(color: Colors.grey),
+              ),
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Icon(Icons.cloud_done),
-              title: Text("PREVIOUS"),
+              icon: Icon(
+                Icons.update,
+                color: Colors.blue,
+              ),
+              title: Text(
+                "PREVIOUS",
+                style: TextStyle(color: Colors.blue),
+              ),
               backgroundColor: Colors.blueGrey),
           BottomNavigationBarItem(
             icon: Icon(Icons.compare),

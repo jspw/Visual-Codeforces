@@ -140,7 +140,7 @@ class HomeState extends State {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
                       String handle = _textFieldController.text.toString();
-                      _textFieldController.clear();
+                      // _textFieldController.clear();
                       return User(handle);
                     },
                   ));
@@ -370,8 +370,14 @@ class HomeState extends State {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.new_releases),
-            title: Text("UPCOMING"),
+            icon: Icon(
+              Icons.new_releases,
+              color: Colors.blue,
+            ),
+            title: Text(
+              "UPCOMING",
+              style: TextStyle(color: Colors.blue),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.update),

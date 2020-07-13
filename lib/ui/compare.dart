@@ -1,3 +1,4 @@
+import 'package:cf_view/ui/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -10,6 +11,47 @@ class Compare extends StatelessWidget {
   Compare(handle1, handle2) {
     this.handle1 = handle1;
     this.handle2 = handle2;
+  }
+
+  TextEditingController _handle1Controller = TextEditingController();
+  TextEditingController _handle2Controller = TextEditingController();
+
+  _displayCompareDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: new Column(
+              children: <Widget>[
+                new TextField(
+                  controller: _handle1Controller,
+                  decoration: InputDecoration(hintText: "Handle1"),
+                ),
+                new TextField(
+                  controller: _handle2Controller,
+                  decoration: InputDecoration(hintText: "Handle2"),
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text('Compare'),
+                onPressed: () {
+                  Navigator.of(context).pop(context);
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      String handle1 = _handle1Controller.text.toString();
+                      String handle2 = _handle2Controller.text.toString();
+                      _handle1Controller.clear();
+                      _handle2Controller.clear();
+                      return Compare(handle1, handle2);
+                    },
+                  ));
+                },
+              ),
+            ],
+          );
+        });
   }
 
   @override
@@ -49,13 +91,34 @@ class Compare extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
-        child: Icon(
-          Icons.arrow_back_ios,
+          backgroundColor: Colors.deepPurple,
+          child: Icon(
+            Icons.compare,
+          ),
+          onPressed: () => _displayCompareDialog(context)),
+      bottomNavigationBar: Container(
+        height: 60,
+        color: Colors.black12,
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          },
+          child: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.home,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('Home')
+              ],
+            ),
+          ),
         ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
       ),
     );
   }
