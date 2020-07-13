@@ -52,9 +52,9 @@ This is a android application based on Codeforces.
 
 - Handle Details
 
-  ![Handle Details](assets/ss/user_profile.png)
+  ![Handle Details](assets/ss/profile1.png)
 
-  ![](assets/ss/profile.png)
+  ![](assets/ss/profile2.png)
 
 * Compare handles
 

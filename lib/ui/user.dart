@@ -582,63 +582,145 @@ class User extends StatelessWidget {
                               children: <Widget>[
                                 Container(
                                   padding: const EdgeInsets.all(10.0),
-                                  alignment: Alignment.center,
+                                  alignment: Alignment.topCenter,
                                   child: Text(
-                                    "Contest Rating",
+                                    "Contest Informations",
                                     style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 30.0,
-                                        shadows: [
-                                          Shadow(
-                                            offset: Offset(3.0, 3.0),
-                                            blurRadius: 3.0,
-                                            color: Colors.grey,
-                                          ),
-                                        ]),
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                      // shadows: [
+                                      //   Shadow(
+                                      //     offset: Offset(1.0, 1.0),
+                                      //     blurRadius: 3.0,
+                                      //     color: Colors.grey,
+                                      //   ),
+                                      // ]
+                                    ),
                                   ),
                                 ),
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 10.0),
-                                      child: new Text(
-                                        "Lowest :" +
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            "Total Contests",
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            "Lowest",
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            "Highest",
+                                            style: TextStyle(
+                                                fontSize: 15.0,
+                                                color: Colors.red,
+                                                shadows: []),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    VerticalDivider(),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            ":",
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            ":",
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            ":",
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    VerticalDivider(),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
+                                            contestRatingData.length.toString(),
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
                                             (((contestRatingData.reduce(
                                                     (curr, next) => curr < next
                                                         ? curr
                                                         : next)).round())
                                                 .toString()),
-                                        style: TextStyle(
-                                          fontSize: 20.0,
-                                          color: Colors.red,
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 10.0),
-                                      child: new Text(
-                                        "Highest : " +
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20.0,top:5.0),
+                                          child: new Text(
                                             (((contestRatingData.reduce(
                                                     (curr, next) => curr > next
                                                         ? curr
                                                         : next)).round())
                                                 .toString()),
-                                        style: TextStyle(
-                                            fontSize: 20.0,
-                                            color: Colors.blue,
-                                            shadows: []),
-                                      ),
+                                            style: TextStyle(
+                                                fontSize: 15.0,
+                                                color: Colors.red,
+                                                shadows: []),
+                                          ),
+                                        ),
+                                      ],
                                     )
                                   ],
                                 ),
+                                Container(
+                                  padding: const EdgeInsets.only(top: 10.0),
+                                  alignment: Alignment.center,
+                                  child: Text("Rating Curve",style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20.0,
+                                  ),),
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 30.0, left: 5.0),
+                                      top: 10.0, left: 5.0),
                                   child: Sparkline(
                                     data: contestRatingData.isEmpty
                                         ? [0.0]
@@ -660,10 +742,10 @@ class User extends StatelessWidget {
                                     // fillMode: FillMode.below,
                                   ),
                                 ),
-                                Divider(
-                                  color: Colors.grey,
-                                  thickness: 1.0,
-                                ),
+                                // Divider(
+                                //   // color: Colors.black,
+                                //   // thickness: 1.0,
+                                // ),
                               ],
                             ),
                           ),
@@ -673,7 +755,7 @@ class User extends StatelessWidget {
                         StaggeredTile.extent(4, 320),
                         // StaggeredTile.extent(2, 200),
                         // StaggeredTile.extent(2, 200),
-                        StaggeredTile.extent(4, 250),
+                        StaggeredTile.extent(4, 300),
                       ],
                     );
                   } else
