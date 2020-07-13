@@ -127,7 +127,8 @@ class PreviousContestsState extends State {
         centerTitle: true,
         leading: new Image.asset(
           "assets/images/cf.png",
-          height: 30.0,
+          height: 25.0,
+          // width: 20.0,
         ),
         actions: [
           IconButton(

@@ -7,7 +7,7 @@ import 'ui/home.dart';
 void main() async {
   runApp(
     new MaterialApp(
-      title: "Codeforces View",
+      title: "Codeforces",
       home: Home(),
     ),
   );
