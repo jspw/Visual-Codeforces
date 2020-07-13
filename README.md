@@ -43,6 +43,7 @@ This is a android application based on Codeforces.
   ![Search Handle](assets/ss/search-handle.png)
 
 * Invalid handle exception handle
+
   ![Invalid handle exception ](assets/ss/invalid.png)
 
 - Handle Details
