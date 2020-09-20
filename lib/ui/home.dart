@@ -246,12 +246,6 @@ class HomeState extends State {
           height: 25.0,
         ),
         actions: [
-          IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-              onPressed: null)
         ],
       ),
       body: new FutureBuilder(
@@ -259,13 +253,7 @@ class HomeState extends State {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.data == null) {
               return Center(
-                child: Text(
-                  "Loading data.......",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 25.0,
-                  ),
-                ),
+                child: CircularProgressIndicator(),
               );
             } else {
               return ListView.builder(

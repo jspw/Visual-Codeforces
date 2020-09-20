@@ -140,12 +140,6 @@ class User extends StatelessWidget {
           "assets/images/cf.png",
           height: 25.0,
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.menu),
-            color: Colors.black,
-          )
-        ],
       ),
       body: new ListView(
         physics: ScrollPhysics(),

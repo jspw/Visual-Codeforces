@@ -130,26 +130,12 @@ class PreviousContestsState extends State {
           height: 25.0,
           // width: 20.0,
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.menu),
-            color: Colors.black,
-          )
-        ],
       ),
       body: new FutureBuilder(
           future: contestInfo(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.data == null) {
-              return Center(
-                child: Text(
-                  "Loading data.......",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 25.0,
-                  ),
-                ),
-              );
+              return Center(child: CircularProgressIndicator());
             } else {
               return ListView.builder(
                   itemCount: snapshot.data['result'].length,

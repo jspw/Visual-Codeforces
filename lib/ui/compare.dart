@@ -75,12 +75,6 @@ class Compare extends StatelessWidget {
           "assets/images/cf.png",
           height: 30.0,
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.menu),
-            color: Colors.black,
-          )
-        ],
       ),
       body: new ListView(
         children: <Widget>[

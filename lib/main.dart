@@ -8,6 +8,7 @@ void main() async {
   runApp(
     new MaterialApp(
       title: "Codeforces",
+      debugShowCheckedModeBanner: false,
       home: Home(),
     ),
   );
